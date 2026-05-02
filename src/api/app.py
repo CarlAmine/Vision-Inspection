@@ -8,7 +8,6 @@ Run:
 """
 from __future__ import annotations
 
-import io
 import base64
 import logging
 from contextlib import asynccontextmanager

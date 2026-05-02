@@ -83,9 +83,9 @@ class ImagePreprocessor:
 
     def _apply_clahe(self, image: np.ndarray) -> np.ndarray:
         lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
-        l, a, b = cv2.split(lab)
-        l = self._clahe.apply(l)
-        return cv2.cvtColor(cv2.merge([l, a, b]), cv2.COLOR_LAB2BGR)
+        l_channel, a, b = cv2.split(lab)
+        l_channel = self._clahe.apply(l_channel)
+        return cv2.cvtColor(cv2.merge([l_channel, a, b]), cv2.COLOR_LAB2BGR)
 
     @staticmethod
     def _letterbox(
