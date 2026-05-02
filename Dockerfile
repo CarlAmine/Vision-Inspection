@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 # System deps for OpenCV headless
 RUN apt-get update --allow-releaseinfo-change && apt-get install -y --no-install-recommends \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
